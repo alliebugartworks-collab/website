@@ -11,6 +11,12 @@ function formatPrice(artwork) {
   return "";
 }
 
+function getCategoryLabel(category) {
+  if (category === "felt-piece") return "Felt piece";
+  if (category === "card") return "Card";
+  return "Artwork";
+}
+
 function createImageElement(src, alt) {
   const img = document.createElement("img");
   img.src = src;
@@ -49,6 +55,7 @@ function renderPiece(artwork, siteConfig) {
         <div class="piece-thumbnails" id="piece-thumbnails"></div>
       </div>
       <div class="piece-info">
+        <p class="piece-category">${getCategoryLabel(artwork.category)}</p>
         <h1>${artwork.title}</h1>
         <p class="piece-price">${formatPrice(artwork)}</p>
         <p class="piece-description">${artwork.description}</p>
