@@ -1,0 +1,175 @@
+{
+  "artworks": [
+    {
+      "id": "love-bad-bitches",
+      "title": "I Love Bad Bitches Banner",
+      "description": "Bold handmade fabric banner featuring appliquéd lettering in purple and lilac on cream, framed by a hand-stitched yellow border with embroidered stars and hearts. A playful statement piece for any wall.",
+      "price": 75,
+      "priceDisplay": "$75",
+      "images": ["images/love-bad-bitches/main.jpg"],
+      "thumbnail": "images/love-bad-bitches/main.jpg"
+    },
+    {
+      "id": "very-hungry-boy-card",
+      "title": "Very Hungry Boy Card",
+      "description": "Very Hungry Boy Card. Includes handmade envelope. Can customize face!",
+      "price": 8,
+      "priceDisplay": "$8",
+      "images": ["images/very-hungry-boy-card/main.png"],
+      "thumbnail": "images/very-hungry-boy-card/main.png"
+    },
+    {
+      "id": "wedding-gifts",
+      "title": "Jon + Merrisa Wedding Banner",
+      "description": "Custom felt appliqué banner celebrating Jon and Merrisa with the phrase \"just like BUTTER\" and wedding date 6 · 20 · 2026. Hand-stitched scalloped navy borders on a soft blue background.",
+      "price": 85,
+      "priceDisplay": "$85",
+      "images": ["images/wedding-gifts/main.png"],
+      "thumbnail": "images/wedding-gifts/main.png"
+    },
+    {
+      "id": "bachelorette-gift",
+      "title": "Camp Ari + Amy Banner",
+      "description": "Quilted wall hanging with bubble-letter appliqué reading \"CAMP ARI + AMY\" on a diamond-quilted green background. Finished with a light blue border, hand-embroidered stars, hearts, and a disco ball.",
+      "price": 80,
+      "priceDisplay": "$80",
+      "images": ["images/bachelorette-gift/main.png"],
+      "thumbnail": "images/bachelorette-gift/main.png"
+    },
+    {
+      "id": "casey-name",
+      "title": "Casey Name Banner",
+      "description": "Personalized felt name banner with navy block letters on a light blue strip, decorative purple cross-stitch borders, and a ribbon fringe in lavender and blue. Perfect for a nursery or child's room.",
+      "price": 40,
+      "priceDisplay": "$40",
+      "images": ["images/casey-name/main.png"],
+      "thumbnail": "images/casey-name/main.png"
+    },
+    {
+      "id": "jamie-name",
+      "title": "Jamie Name Banner",
+      "description": "Hand-stitched felt name banner with mustard-yellow letters on a navy background, pink accents, decorative cross-stitching, and a playful blue and pink ribbon fringe.",
+      "price": 40,
+      "priceDisplay": "$40",
+      "images": ["images/jamie-name/main.png"],
+      "thumbnail": "images/jamie-name/main.png"
+    },
+    {
+      "id": "sophie-name",
+      "title": "Sophie Name Banner",
+      "description": "Whimsical felt name banner with peach letters on navy, yellow zigzag-stitched borders, and dangling hearts and stars on lavender ribbon. A sweet personalized touch for any child's space.",
+      "price": 45,
+      "priceDisplay": "$45",
+      "images": ["images/sophie-name/main.png"],
+      "thumbnail": "images/sophie-name/main.png"
+    },
+    {
+      "id": "handmade-cards",
+      "title": "Handmade Pride Cards",
+      "description": "Set of four hand-drawn greeting cards including an \"I Love You\" heart design and three Pride-themed cards with bold marker illustrations, wavy patterns, and floral motifs on colorful cardstock.",
+      "price": 24,
+      "priceDisplay": "$24",
+      "images": ["images/handmade-cards/main.jpg"],
+      "thumbnail": "images/handmade-cards/main.jpg"
+    },
+    {
+      "id": "thank-you-stamp-cards",
+      "title": "Block-Print Thank You Cards",
+      "description": "Artisan block-printed \"Thank You!\" cards on handmade textured paper with stylized floral motifs. Available in multiple colorways including emerald on blush, indigo on cream, and crimson on rust.",
+      "price": 6,
+      "priceDisplay": "$6",
+      "images": ["images/thank-you-stamp-cards/main.jpg"],
+      "thumbnail": "images/thank-you-stamp-cards/main.jpg"
+    },
+    {
+      "id": "halloween-card",
+      "title": "Witchy Birthday Card",
+      "description": "Whimsical birthday card featuring three witches dancing around a campfire under a full moon. Includes a purple envelope with a Halloween-patterned liner and a gold wax seal.",
+      "price": 7,
+      "priceDisplay": "$7",
+      "images": ["images/halloween-card/main.jpg"],
+      "thumbnail": "images/halloween-card/main.jpg"
+    },
+    {
+      "id": "hand-drawn-engaged",
+      "title": "Jazzed Engagement Card",
+      "description": "Playful hand-illustrated engagement card with jazz instruments — trumpet, saxophone, and clarinet — on a soft blue background. Reads \"I'm so jazzed that you're engaged!\" Includes a bright yellow envelope.",
+      "price": 6,
+      "priceDisplay": "$6",
+      "images": ["images/hand-drawn-engaged/main.jpg"],
+      "thumbnail": "images/hand-drawn-engaged/main.jpg"
+    },
+    {
+      "id": "new-home-card",
+      "title": "Happy New Home Card",
+      "description": "Cozy new home greeting card with a hand-drawn illustration of someone reading on a sofa with their puppy. Comes with a deep purple envelope lined with an adorable puppy pattern.",
+      "price": 7,
+      "priceDisplay": "$7",
+      "images": ["images/new-home-card/main.jpg"],
+      "thumbnail": "images/new-home-card/main.jpg"
+    },
+    {
+      "id": "wedding-card",
+      "title": "We Do Wedding Card",
+      "description": "Romantic watercolor-style illustration of two hands clinking gold-rimmed wine glasses beneath elegant \"We do.\" script on a soft blue background. Perfect for weddings and anniversaries.",
+      "price": 8,
+      "priceDisplay": "$8",
+      "images": ["images/wedding-card/main.jpg"],
+      "thumbnail": "images/wedding-card/main.jpg"
+    },
+    {
+      "id": "wedding-card-moon",
+      "title": "Moon & Stars Wedding Card",
+      "description": "Hand-painted celestial greeting card on black cardstock with a crescent moon, golden stars, and clouds. Reads \"the moon and stars aligned to bring you two together.\" Includes a golden envelope with a hand-painted sky liner.",
+      "price": 8,
+      "priceDisplay": "$8",
+      "images": ["images/wedding-card-moon/main.jpg"],
+      "thumbnail": "images/wedding-card-moon/main.jpg"
+    },
+    {
+      "id": "anniversary-card",
+      "title": "Cardinal Anniversary Card",
+      "description": "Hand-painted cardinal greeting card on black cardstock with a cardinal bird, golden stars, and clouds. Reads \"the moon and stars aligned to bring you two together.\" Includes a golden envelope with a hand-painted sky liner.",
+      "price": 8,
+      "priceDisplay": "$8",
+      "images": ["images/anniversary-card/main.png"],
+      "thumbnail": "images/anniversary-card/main.png"
+    },
+    {
+      "id": "birthday-card",
+      "title": "Cake Birthday Card Anniversary Card",
+      "description": "Hand drawn cake bithday card on cardstock. Includes handmade envelope.",
+      "price": 8,
+      "priceDisplay": "$8",
+      "images": ["images/birthday-card/main.png"],
+      "thumbnail": "images/birthday-card/main.png"
+    },
+    {
+      "id": "hay-card",
+      "title": "Horse Hay Card",
+      "description": "Cute Horsey just sayin hay card. Includes handmade envelope.",
+      "price": 8,
+      "priceDisplay": "$8",
+      "images": ["images/hay-card/main.png"],
+      "thumbnail": "images/hay-card/main.png"
+    },
+    {
+      "id": "moving-berry-sad-card",
+      "title": "Moving Berry Sad Card",
+      "description": "Moving Away Carrd. Includes handmade envelope.",
+      "price": 8,
+      "priceDisplay": "$10",
+      "images": ["images/moving-berry-sad-card/main.png"],
+      "thumbnail": "images/moving-berry-sad-card/main.png"
+    },
+    {
+      "id": "portrait-card",
+      "title": "Birthday Portrait Card",
+      "description": "Birthday Portrait Card. Includes handmade envelope.",
+      "price": 8,
+      "priceDisplay": "$40",
+      "images": ["images/portrait-card/main.png"],
+      "thumbnail": "images/portrait-card/main.png"
+    }
+  ]
+}
