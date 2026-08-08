@@ -7,7 +7,8 @@
       "price": 75,
       "priceDisplay": "$75",
       "images": ["images/love-bad-bitches/main.jpg"],
-      "thumbnail": "images/love-bad-bitches/main.jpg"
+      "thumbnail": "images/love-bad-bitches/main.jpg",
+      "category": "felt-piece"
     },
     {
       "id": "very-hungry-boy-card",
@@ -16,7 +17,8 @@
       "price": 8,
       "priceDisplay": "$8",
       "images": ["images/very-hungry-boy-card/main.png"],
-      "thumbnail": "images/very-hungry-boy-card/main.png"
+      "thumbnail": "images/very-hungry-boy-card/main.png",
+      "category": "card"
     },
     {
       "id": "wedding-gifts",
@@ -25,7 +27,8 @@
       "price": 85,
       "priceDisplay": "$85",
       "images": ["images/wedding-gifts/main.png"],
-      "thumbnail": "images/wedding-gifts/main.png"
+      "thumbnail": "images/wedding-gifts/main.png",
+      "category": "felt-piece"
     },
     {
       "id": "bachelorette-gift",
@@ -34,7 +37,8 @@
       "price": 80,
       "priceDisplay": "$80",
       "images": ["images/bachelorette-gift/main.png"],
-      "thumbnail": "images/bachelorette-gift/main.png"
+      "thumbnail": "images/bachelorette-gift/main.png",
+      "category": "felt-piece"
     },
     {
       "id": "casey-name",
@@ -43,7 +47,8 @@
       "price": 40,
       "priceDisplay": "$40",
       "images": ["images/casey-name/main.png"],
-      "thumbnail": "images/casey-name/main.png"
+      "thumbnail": "images/casey-name/main.png",
+      "category": "felt-piece"
     },
     {
       "id": "jamie-name",
@@ -52,7 +57,8 @@
       "price": 40,
       "priceDisplay": "$40",
       "images": ["images/jamie-name/main.png"],
-      "thumbnail": "images/jamie-name/main.png"
+      "thumbnail": "images/jamie-name/main.png",
+      "category": "felt-piece"
     },
     {
       "id": "sophie-name",
@@ -61,7 +67,8 @@
       "price": 45,
       "priceDisplay": "$45",
       "images": ["images/sophie-name/main.png"],
-      "thumbnail": "images/sophie-name/main.png"
+      "thumbnail": "images/sophie-name/main.png",
+      "category": "felt-piece"
     },
     {
       "id": "handmade-cards",
@@ -70,7 +77,8 @@
       "price": 24,
       "priceDisplay": "$24",
       "images": ["images/handmade-cards/main.jpg"],
-      "thumbnail": "images/handmade-cards/main.jpg"
+      "thumbnail": "images/handmade-cards/main.jpg",
+      "category": "card"
     },
     {
       "id": "thank-you-stamp-cards",
@@ -79,7 +87,8 @@
       "price": 6,
       "priceDisplay": "$6",
       "images": ["images/thank-you-stamp-cards/main.jpg"],
-      "thumbnail": "images/thank-you-stamp-cards/main.jpg"
+      "thumbnail": "images/thank-you-stamp-cards/main.jpg",
+      "category": "card"
     },
     {
       "id": "halloween-card",
@@ -88,7 +97,8 @@
       "price": 7,
       "priceDisplay": "$7",
       "images": ["images/halloween-card/main.jpg"],
-      "thumbnail": "images/halloween-card/main.jpg"
+      "thumbnail": "images/halloween-card/main.jpg",
+      "category": "card"
     },
     {
       "id": "hand-drawn-engaged",
@@ -97,7 +107,8 @@
       "price": 6,
       "priceDisplay": "$6",
       "images": ["images/hand-drawn-engaged/main.jpg"],
-      "thumbnail": "images/hand-drawn-engaged/main.jpg"
+      "thumbnail": "images/hand-drawn-engaged/main.jpg",
+      "category": "card"
     },
     {
       "id": "new-home-card",
@@ -106,7 +117,8 @@
       "price": 7,
       "priceDisplay": "$7",
       "images": ["images/new-home-card/main.jpg"],
-      "thumbnail": "images/new-home-card/main.jpg"
+      "thumbnail": "images/new-home-card/main.jpg",
+      "category": "card"
     },
     {
       "id": "wedding-card",
@@ -115,7 +127,8 @@
       "price": 8,
       "priceDisplay": "$8",
       "images": ["images/wedding-card/main.jpg"],
-      "thumbnail": "images/wedding-card/main.jpg"
+      "thumbnail": "images/wedding-card/main.jpg",
+      "category": "card"
     },
     {
       "id": "wedding-card-moon",
@@ -124,7 +137,8 @@
       "price": 8,
       "priceDisplay": "$8",
       "images": ["images/wedding-card-moon/main.jpg"],
-      "thumbnail": "images/wedding-card-moon/main.jpg"
+      "thumbnail": "images/wedding-card-moon/main.jpg",
+      "category": "card"
     },
     {
       "id": "anniversary-card",
@@ -133,7 +147,8 @@
       "price": 8,
       "priceDisplay": "$8",
       "images": ["images/anniversary-card/main.png"],
-      "thumbnail": "images/anniversary-card/main.png"
+      "thumbnail": "images/anniversary-card/main.png",
+      "category": "card"
     },
     {
       "id": "birthday-card",
@@ -142,7 +157,8 @@
       "price": 8,
       "priceDisplay": "$8",
       "images": ["images/birthday-card/main.png"],
-      "thumbnail": "images/birthday-card/main.png"
+      "thumbnail": "images/birthday-card/main.png",
+      "category": "card"
     },
     {
       "id": "hay-card",
@@ -151,7 +167,8 @@
       "price": 8,
       "priceDisplay": "$8",
       "images": ["images/hay-card/main.png"],
-      "thumbnail": "images/hay-card/main.png"
+      "thumbnail": "images/hay-card/main.png",
+      "category": "card"
     },
     {
       "id": "moving-berry-sad-card",
@@ -160,7 +177,8 @@
       "price": 8,
       "priceDisplay": "$10",
       "images": ["images/moving-berry-sad-card/main.png"],
-      "thumbnail": "images/moving-berry-sad-card/main.png"
+      "thumbnail": "images/moving-berry-sad-card/main.png",
+      "category": "card"
     },
     {
       "id": "portrait-card",
@@ -169,7 +187,8 @@
       "price": 8,
       "priceDisplay": "$40",
       "images": ["images/portrait-card/main.png"],
-      "thumbnail": "images/portrait-card/main.png"
+      "thumbnail": "images/portrait-card/main.png",
+      "category": "card"
     }
   ]
 }
