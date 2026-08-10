@@ -12,6 +12,19 @@ function getCategoryLabel(category) {
   return "Artwork";
 }
 
+const filterDescriptions = {
+  all: "Tap any piece to view details, photos, and pricing. You can order any of these pieces as is, customize, or work with me to commission a new piece.",
+  card: "Original handmade cards for birthdays, celebrations, and everyday moments. Each one is designed with a little extra personality and can be customized for your occasion.",
+  "felt-piece": "Hand-stitched felt pieces and banners made with layered color, texture, and small details. Many can be customized or adapted into a one-of-a-kind commission."
+};
+
+function setGallerySubtitle(filter) {
+  const subtitle = document.getElementById("gallery-subtitle");
+  if (!subtitle) return;
+
+  subtitle.textContent = filterDescriptions[filter] || filterDescriptions.all;
+}
+
 function createImageElement(src, alt) {
   const img = document.createElement("img");
   img.src = src;
@@ -105,6 +118,7 @@ function wireFilterButtons(allArtworks) {
       const filter = button.dataset.filter;
 
       buttons.forEach((item) => item.classList.toggle("active", item === button));
+      setGallerySubtitle(filter);
 
       if (filter === "all") {
         renderGallery(allArtworks);
@@ -126,6 +140,7 @@ async function initGallery() {
 
   try {
     const artworks = await loadArtworks();
+    setGallerySubtitle("all");
     renderGallery(artworks);
     wireFilterButtons(artworks);
   } catch (error) {
