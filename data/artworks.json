@@ -52,7 +52,7 @@
     },
     {
       "id": "jamie-name",
-      "title": "Jamie Name Banner",
+      "title": "remove this listing",
       "description": "combine with casey-name. one listing for all name banners",
       "price": 0,
       "priceDisplay": "$0",
@@ -62,10 +62,10 @@
     },
     {
       "id": "sophie-name",
-      "title": "Sophie Name Banner",
-      "description": "Whimsical felt name banner with peach letters on navy, yellow zigzag-stitched borders, and dangling hearts and stars on lavender ribbon. A sweet personalized touch for any child's space.",
-      "price": 40,
-      "priceDisplay": "$40",
+      "title": "remove this listing",
+      "description": "add this image to casey-name. one listing for all name banners",
+      "price": 0,
+      "priceDisplay": "$0",
       "images": ["images/sophie-name/main.png"],
       "thumbnail": "images/sophie-name/main.png",
       "category": "felt-piece"
@@ -73,9 +73,9 @@
     {
       "id": "handmade-cards",
       "title": "Handmade Pride Cards",
-      "description": "Set of four hand-drawn greeting cards including an \"I Love You\" heart design and three Pride-themed cards with bold marker illustrations, wavy patterns, and floral motifs on colorful cardstock.",
-      "price": 24,
-      "priceDisplay": "$24",
+      "description": "Pride card with rippling effects. Cards can be flowers, hearts, triangles, or circles at the centers in any pride flag colors. Small text optional! $5/card or a $15/set of 4 cards",
+      "price": 15,
+      "priceDisplay": "$15",
       "images": ["images/handmade-cards/main.jpg"],
       "thumbnail": "images/handmade-cards/main.jpg",
       "category": "card"
@@ -83,7 +83,7 @@
     {
       "id": "thank-you-stamp-cards",
       "title": "Block-Print Thank You Cards",
-      "description": "Artisan block-printed \"Thank You!\" cards on handmade textured paper with stylized floral motifs. Available in multiple colorways including emerald on blush, indigo on cream, and crimson on rust.",
+      "description": "I carved this lino block in 2025 for the thank you cards for our wedding shower! This card is available for print on handmade paper (for a more rustic feel) or cardstock. Block printing are fun to make in batches, so an individual card is $7 but you can get 6 for $20! Envelopes included. ",
       "price": 7,
       "priceDisplay": "$7",
       "images": ["images/thank-you-stamp-cards/main.jpg"],
@@ -93,7 +93,7 @@
     {
       "id": "halloween-card",
       "title": "Witchy Birthday Card",
-      "description": "Whimsical birthday card featuring three witches dancing around a campfire under a full moon. Includes a purple envelope with a Halloween-patterned liner and a gold wax seal.",
+      "description": "This greeting card is a digital illustration printed on card stock and comes with a matching envelope.",
       "price": 5,
       "priceDisplay": "$5",
       "images": ["images/halloween-card/main.jpg"],
@@ -103,7 +103,7 @@
     {
       "id": "hand-drawn-engaged",
       "title": "Jazzed Engagement Card",
-      "description": "Playful hand-illustrated engagement card with jazz instruments — trumpet, saxophone, and clarinet — on a soft blue background. Reads \"I'm so jazzed that you're engaged!\" Includes a bright yellow envelope.",
+      "description": "Don't you love Love? I know I do. This is a digitally drawn card printed on cardstock paper and comes with a matching envelope.",
       "price": 5,
       "priceDisplay": "$5",
       "images": ["images/hand-drawn-engaged/main.jpg"],
@@ -113,7 +113,7 @@
     {
       "id": "new-home-card",
       "title": "Happy New Home Card",
-      "description": "Cozy new home greeting card with a hand-drawn illustration of someone reading on a sofa with their puppy. Comes with a deep purple envelope lined with an adorable puppy pattern.",
+      "description": "This card was for my friend as she moved to a new apartment and adopted a little pup. It is celebrating the warmth and coziness of a new place, simple decor around you but it already feels like home This is a digitally drawn card printed on cardstock paper and comes with a matching envelope ",
       "price": 5,
       "priceDisplay": "$5",
       "images": ["images/new-home-card/main.jpg"],
@@ -123,7 +123,7 @@
     {
       "id": "wedding-card",
       "title": "We Do Wedding Card",
-      "description": "Romantic watercolor-style illustration of two hands clinking gold-rimmed wine glasses beneath elegant \"We do.\" script on a soft blue background. Perfect for weddings and anniversaries.",
+      "description": "Allie you left off on this one",
       "price": 5,
       "priceDisplay": "$5",
       "images": ["images/wedding-card/main.jpg"],
