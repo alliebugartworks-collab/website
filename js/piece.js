@@ -61,7 +61,7 @@ function renderPiece(artwork, siteConfig) {
         <p class="piece-description">${artwork.description}</p>
         <div class="order-box">
           <h2>Place an order</h2>
-          <p>Contact ${siteConfig?.artistName || "me"} to purchase this piece. Mention the title when you reach out.</p>
+          <p>Customize your piece and add it to your cart to start the order process.</p>
           <label class="customization-field" for="customization-input">
             <span>Customization details</span>
             <input
@@ -72,10 +72,6 @@ function renderPiece(artwork, siteConfig) {
               placeholder="Add a name, date, or note"
             >
           </label>
-          <div class="order-links">
-            <a class="order-link order-link-primary" href="tel:${siteConfig?.phoneLink || ""}">Call ${siteConfig?.phone || ""}</a>
-            <a class="order-link order-link-secondary" href="${siteConfig?.venmoLink || "#"}" target="_blank" rel="noopener noreferrer">Pay via Venmo ${siteConfig?.venmo || ""}</a>
-          </div>
           <button type="button" class="primary-button" id="add-to-cart" data-artwork-id="${artwork.id}">Add to cart</button>
         </div>
       </div>

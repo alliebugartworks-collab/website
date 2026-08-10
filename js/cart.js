@@ -216,6 +216,7 @@ function renderCart() {
 
           <aside class="cart-summary">
             <h2>Order summary</h2>
+            <p class="checkout-intro">Start the checkout process by hitting the button below to text Allie about your order. No payment is required yet. Allie will confirm the order then request the amount via Venmo or Zelle.</p>
             <div class="summary-row">
               <span>Items</span>
               <span>${itemCount}</span>
@@ -224,8 +225,7 @@ function renderCart() {
               <span>Total</span>
               <span>${formatCurrency(total)}</span>
             </div>
-            <a href="index.html" class="secondary-button cart-continue">Continue Shopping</a>
-            <button type="button" class="primary-button cart-checkout">Checkout</button>
+            <button type="button" class="primary-button cart-checkout">Let's get your order started! Click to add your name and send text to Allie!</button>
           </aside>
         </div>
       `;
