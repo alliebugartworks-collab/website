@@ -26,9 +26,32 @@ function getCartCount() {
   return getCart().reduce((count, item) => count + Number(item.quantity || 0), 0);
 }
 
-function addToCart(artworkId, quantity = 1, customization = "") {
+function normalizeAddons(addons) {
+  if (!addons || typeof addons !== "object") return {};
+
+  return {
+    ribbon: Boolean(addons.ribbon),
+    stars: Boolean(addons.stars),
+  };
+}
+
+function getArtworkAddonPrice(artworkId, addons = {}) {
+  const supportedIds = new Set(["casey-name", "name-banner"]);
+  if (!supportedIds.has(String(artworkId))) return 0;
+
+  const normalizedAddons = normalizeAddons(addons);
+  const addonPrices = {
+    ribbon: 5,
+    stars: 10,
+  };
+
+  return (normalizedAddons.ribbon ? addonPrices.ribbon : 0) + (normalizedAddons.stars ? addonPrices.stars : 0);
+}
+
+function addToCart(artworkId, quantity = 1, customization = "", selectedAddons = {}) {
   const normalizedQuantity = Number(quantity) || 1;
   const normalizedCustomization = typeof customization === "string" ? customization.trim() : "";
+  const normalizedAddons = normalizeAddons(selectedAddons);
   const cart = getCart();
   const existingItem = cart.find((item) => item.id === artworkId);
 
@@ -37,6 +60,7 @@ function addToCart(artworkId, quantity = 1, customization = "") {
     if (normalizedCustomization) {
       existingItem.customization = normalizedCustomization;
     }
+    existingItem.addons = normalizedAddons;
     if (existingItem.quantity <= 0) {
       const itemIndex = cart.findIndex((item) => item.id === artworkId);
       cart.splice(itemIndex, 1);
@@ -46,6 +70,7 @@ function addToCart(artworkId, quantity = 1, customization = "") {
       id: artworkId,
       quantity: Math.max(1, normalizedQuantity),
       customization: normalizedCustomization,
+      addons: normalizedAddons,
     });
   }
 

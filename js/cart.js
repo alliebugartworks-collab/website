@@ -30,6 +30,21 @@ function parseArtworkPrice(artwork) {
   return Number.isFinite(rawPrice) ? rawPrice : 0;
 }
 
+function getArtworkAddonPrice(artworkId, addons = {}) {
+  const supportedIds = new Set(["casey-name", "name-banner"]);
+  if (!supportedIds.has(String(artworkId))) return 0;
+
+  const normalizedAddons = addons || {};
+  return (normalizedAddons.ribbon ? 5 : 0) + (normalizedAddons.stars ? 10 : 0);
+}
+
+function getArtworkAddonSummary(addons = {}) {
+  const selected = [];
+  if (addons?.ribbon) selected.push("Ribbon");
+  if (addons?.stars) selected.push("Stars");
+  return selected.join(", ");
+}
+
 async function getCartWithArtworkDetails() {
   const [cart, artworks] = await Promise.all([Promise.resolve(getCart()), loadArtworks()]);
   const artworkMap = new Map(artworks.map((artwork) => [artwork.id, artwork]));
@@ -41,13 +56,18 @@ async function getCartWithArtworkDetails() {
 
       const quantity = Math.max(1, Number(item.quantity) || 1);
       const price = parseArtworkPrice(artwork);
+      const addons = item.addons && typeof item.addons === "object" ? item.addons : {};
+      const addonPrice = getArtworkAddonPrice(artwork.id, addons);
+      const unitPrice = price + addonPrice;
 
       return {
         ...artwork,
         quantity,
         customization: typeof item.customization === "string" ? item.customization.trim() : "",
-        unitPrice: price,
-        lineTotal: quantity * price,
+        addons,
+        addonsSummary: getArtworkAddonSummary(addons),
+        unitPrice,
+        lineTotal: quantity * unitPrice,
       };
     })
     .filter(Boolean);
@@ -77,7 +97,8 @@ function buildCheckoutMessage(orderItems, customer) {
 
   const details = orderItems.map((item) => {
     const customizationText = item.customization ? ` | Customization: ${item.customization}` : "";
-    return `- ${item.title} x${item.quantity}${customizationText} | ${formatCurrency(item.lineTotal)}`;
+    const addonText = item.addonsSummary ? ` | Add-ons: ${item.addonsSummary}` : "";
+    return `- ${item.title} x${item.quantity}${customizationText}${addonText} | ${formatCurrency(item.lineTotal)}`;
   });
 
   const footer = [
@@ -203,6 +224,7 @@ function renderCart() {
                         >
                         <button type="button" class="text-button cart-clear-customization" data-artwork-id="${item.id}">Remove customization</button>
                       </div>
+                      ${item.addonsSummary ? `<p class="cart-item-addons">Add-ons: ${escapeHtml(item.addonsSummary)}</p>` : ""}
                     </div>
                     <div class="cart-item-actions">
                       <p class="cart-item-line-total">${formatCurrency(item.lineTotal)}</p>

@@ -46,28 +46,12 @@
       "description": "Handstitched felt name sign for your kiddo's room. You can pick colors from my felt library to completely customize the banner, or I'd love to surprise you with the final design. Ribbon adornment available for $5 and star additions are available for $10. ",
       "price": 30,
       "priceDisplay": "$30",
-      "images": ["images/casey-name/main.png"],
+      "images": [
+        "images/casey-name/main.png",
+        "images/jamie-name/main.png",
+        "images/sophie-name/main.png"
+      ],
       "thumbnail": "images/casey-name/main.png",
-      "category": "felt-piece"
-    },
-    {
-      "id": "jamie-name",
-      "title": "remove this listing",
-      "description": "combine with casey-name. one listing for all name banners",
-      "price": 0,
-      "priceDisplay": "$0",
-      "images": ["images/jamie-name/main.png"],
-      "thumbnail": "images/jamie-name/main.png",
-      "category": "felt-piece"
-    },
-    {
-      "id": "sophie-name",
-      "title": "remove this listing",
-      "description": "add this image to casey-name. one listing for all name banners",
-      "price": 0,
-      "priceDisplay": "$0",
-      "images": ["images/sophie-name/main.png"],
-      "thumbnail": "images/sophie-name/main.png",
       "category": "felt-piece"
     },
     {

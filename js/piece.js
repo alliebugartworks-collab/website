@@ -17,6 +17,20 @@ function getCategoryLabel(category) {
   return "Artwork";
 }
 
+function formatMoney(amount) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(Number(amount || 0));
+}
+
+function getAddonSummary(addons) {
+  const selected = [];
+  if (addons?.ribbon) selected.push("Ribbon");
+  if (addons?.stars) selected.push("Stars");
+  return selected.join(", ");
+}
+
 function createImageElement(src, alt) {
   const img = document.createElement("img");
   img.src = src;
@@ -45,6 +59,9 @@ async function loadArtworks() {
 function renderPiece(artwork, siteConfig) {
   const container = document.getElementById("piece-content");
   const images = artwork.images?.length ? artwork.images : [artwork.thumbnail];
+  const basePrice = Number(artwork.price) || 0;
+  const supportedIds = new Set(["casey-name", "name-banner"]);
+  const isNameBanner = supportedIds.has(String(artwork.id));
 
   document.title = `${artwork.title} — ${siteConfig?.siteTitle || "Allie Bug Studio"}`;
 
@@ -57,11 +74,23 @@ function renderPiece(artwork, siteConfig) {
       <div class="piece-info">
         <p class="piece-category">${getCategoryLabel(artwork.category)}</p>
         <h1>${artwork.title}</h1>
-        <p class="piece-price">${formatPrice(artwork)}</p>
+        <p class="piece-price" data-base-price="${basePrice}">${formatPrice(artwork)}</p>
         <p class="piece-description">${artwork.description}</p>
         <div class="order-box">
           <h2>Place an order</h2>
           <p>Customize your piece and add it to your cart to start the order process.</p>
+          ${isNameBanner ? `
+            <div class="addon-selector">
+              <label class="checkbox-row">
+                <input type="checkbox" data-addon="ribbon" aria-label="Add ribbon for $5">
+                <span>Ribbon (+$5)</span>
+              </label>
+              <label class="checkbox-row">
+                <input type="checkbox" data-addon="stars" aria-label="Add stars for $10">
+                <span>Stars (+$10)</span>
+              </label>
+            </div>
+          ` : ""}
           <label class="customization-field" for="customization-input">
             <span>Customization details</span>
             <input
@@ -80,11 +109,32 @@ function renderPiece(artwork, siteConfig) {
 
   const addToCartButton = document.getElementById("add-to-cart");
   const customizationInput = document.getElementById("customization-input");
+  const priceLabel = document.querySelector(".piece-price");
+  const addonInputs = Array.from(document.querySelectorAll("[data-addon]"));
+
+  function updateDisplayedPrice() {
+    if (!priceLabel) return;
+
+    const selectedAddons = {
+      ribbon: document.querySelector('[data-addon="ribbon"]')?.checked,
+      stars: document.querySelector('[data-addon="stars"]')?.checked,
+    };
+    const addonTotal = (selectedAddons.ribbon ? 5 : 0) + (selectedAddons.stars ? 10 : 0);
+    const total = basePrice + addonTotal;
+    priceLabel.textContent = formatMoney(total);
+  }
+
+  addonInputs.forEach((input) => input.addEventListener("change", updateDisplayedPrice));
+  updateDisplayedPrice();
 
   if (addToCartButton) {
     addToCartButton.addEventListener("click", () => {
       const customization = customizationInput ? customizationInput.value : "";
-      addToCart(artwork.id, 1, customization);
+      const selectedAddons = {
+        ribbon: document.querySelector('[data-addon="ribbon"]')?.checked || false,
+        stars: document.querySelector('[data-addon="stars"]')?.checked || false,
+      };
+      addToCart(artwork.id, 1, customization, selectedAddons);
       addToCartButton.textContent = "Added to cart";
       addToCartButton.disabled = true;
       if (customizationInput) customizationInput.value = "";

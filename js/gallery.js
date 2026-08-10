@@ -18,6 +18,19 @@ const filterDescriptions = {
   "felt-piece": "Hand-stitched felt pieces and banners made with layered color, texture, and small details. Many can be customized or adapted into a one-of-a-kind commission."
 };
 
+const filterTitles = {
+  all: "All Available Works",
+  card: "Cards",
+  "felt-piece": "Felt Pieces"
+};
+
+function setGalleryTitle(filter) {
+  const title = document.querySelector(".hero h1");
+  if (!title) return;
+
+  title.textContent = filterTitles[filter] || filterTitles.all;
+}
+
 function setGallerySubtitle(filter) {
   const subtitle = document.getElementById("gallery-subtitle");
   if (!subtitle) return;
@@ -118,6 +131,7 @@ function wireFilterButtons(allArtworks) {
       const filter = button.dataset.filter;
 
       buttons.forEach((item) => item.classList.toggle("active", item === button));
+      setGalleryTitle(filter);
       setGallerySubtitle(filter);
 
       if (filter === "all") {
@@ -140,6 +154,7 @@ async function initGallery() {
 
   try {
     const artworks = await loadArtworks();
+    setGalleryTitle("all");
     setGallerySubtitle("all");
     renderGallery(artworks);
     wireFilterButtons(artworks);

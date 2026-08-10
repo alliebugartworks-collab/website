@@ -496,6 +496,28 @@ a:hover {
   text-decoration: none;
 }
 
+.addon-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.checkbox-row input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
 .customization-field {
   display: flex;
   flex-direction: column;
@@ -588,6 +610,12 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
   gap: 0.75rem;
+}
+
+.cart-item-addons {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
 }
 
 .cart-customization-field {
