@@ -68,11 +68,9 @@ function renderEmptyCart() {
 
 function buildCheckoutMessage(orderItems, customer) {
   const intro = [
-    "Order submitted for Allie Hopper.",
+    "Hi Allie, I would like to purchase these items:",
     "Customer information:",
     `Name: ${customer.name}`,
-    `Phone: ${customer.phone}`,
-    `Email: ${customer.email}`,
     "",
     "Order details:",
   ];
@@ -92,9 +90,7 @@ function buildCheckoutMessage(orderItems, customer) {
 
 function getSmsLink(orderItems, customerName = "Customer") {
   const message = encodeURIComponent(buildCheckoutMessage(orderItems, {
-    name: customerName,
-    phone: "",
-    email: "",
+    name: customerName
   }));
   return `sms:+14194299460&body=${message}`;
 }
