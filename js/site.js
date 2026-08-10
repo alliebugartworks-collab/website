@@ -1,4 +1,108 @@
+const CART_STORAGE_KEY = "allie-bug-cart";
+
 let siteConfig = null;
+
+function getCart() {
+  try {
+    const rawCart = localStorage.getItem(CART_STORAGE_KEY);
+    if (!rawCart) return [];
+
+    const parsedCart = JSON.parse(rawCart);
+    if (!Array.isArray(parsedCart)) return [];
+
+    return parsedCart.filter((item) => item && typeof item.id === "string" && Number(item.quantity) > 0);
+  } catch (error) {
+    console.error("Could not load cart from storage.", error);
+    return [];
+  }
+}
+
+function saveCart(cart) {
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+  renderCartBadge();
+}
+
+function getCartCount() {
+  return getCart().reduce((count, item) => count + Number(item.quantity || 0), 0);
+}
+
+function addToCart(artworkId, quantity = 1, customization = "") {
+  const normalizedQuantity = Number(quantity) || 1;
+  const normalizedCustomization = typeof customization === "string" ? customization.trim() : "";
+  const cart = getCart();
+  const existingItem = cart.find((item) => item.id === artworkId);
+
+  if (existingItem) {
+    existingItem.quantity = Math.max(0, Number(existingItem.quantity || 0) + normalizedQuantity);
+    if (normalizedCustomization) {
+      existingItem.customization = normalizedCustomization;
+    }
+    if (existingItem.quantity <= 0) {
+      const itemIndex = cart.findIndex((item) => item.id === artworkId);
+      cart.splice(itemIndex, 1);
+    }
+  } else {
+    cart.push({
+      id: artworkId,
+      quantity: Math.max(1, normalizedQuantity),
+      customization: normalizedCustomization,
+    });
+  }
+
+  saveCart(cart);
+  return cart;
+}
+
+function updateCartItem(artworkId, quantity) {
+  const cart = getCart();
+  const itemIndex = cart.findIndex((item) => item.id === artworkId);
+
+  if (itemIndex === -1) return cart;
+
+  const nextQuantity = Number(quantity);
+  if (!Number.isFinite(nextQuantity) || nextQuantity <= 0) {
+    cart.splice(itemIndex, 1);
+    saveCart(cart);
+    return cart;
+  }
+
+  cart[itemIndex].quantity = nextQuantity;
+  saveCart(cart);
+  return cart;
+}
+
+function updateCartItemCustomization(artworkId, customization) {
+  const cart = getCart();
+  const itemIndex = cart.findIndex((item) => item.id === artworkId);
+
+  if (itemIndex === -1) return cart;
+
+  const normalizedCustomization = typeof customization === "string" ? customization.trim() : "";
+  cart[itemIndex].customization = normalizedCustomization;
+  saveCart(cart);
+  return cart;
+}
+
+function removeCartItem(artworkId) {
+  const nextCart = getCart().filter((item) => item.id !== artworkId);
+  saveCart(nextCart);
+  return nextCart;
+}
+
+function renderCartBadge() {
+  const cartLink = document.getElementById("cart-link");
+  const cartCount = document.getElementById("cart-count");
+  const count = getCartCount();
+
+  if (cartCount) {
+    cartCount.textContent = String(count);
+    cartCount.hidden = count === 0;
+  }
+
+  if (cartLink) {
+    cartLink.setAttribute("aria-label", `View cart with ${count} item${count === 1 ? "" : "s"}`);
+  }
+}
 
 async function loadSiteConfig() {
   if (siteConfig) return siteConfig;
@@ -47,6 +151,7 @@ async function initSite() {
 
     if (headerContact) renderContactLinks(config, headerContact);
     if (footerContact) renderFooter(config, footerContact);
+    renderCartBadge();
   } catch (error) {
     console.error(error);
   }

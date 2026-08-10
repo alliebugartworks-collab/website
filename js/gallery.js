@@ -48,9 +48,12 @@ function renderGallery(artworks) {
   }
 
   artworks.forEach((artwork) => {
-    const card = document.createElement("a");
+    const card = document.createElement("article");
     card.className = "art-card";
-    card.href = `piece.html?id=${encodeURIComponent(artwork.id)}`;
+
+    const link = document.createElement("a");
+    link.className = "art-card-link";
+    link.href = `piece.html?id=${encodeURIComponent(artwork.id)}`;
 
     const imageWrap = document.createElement("div");
     imageWrap.className = "art-card-image";
@@ -66,8 +69,29 @@ function renderGallery(artworks) {
       <p class="art-card-price">${formatPrice(artwork)}</p>
     `;
 
-    card.appendChild(imageWrap);
-    card.appendChild(body);
+    link.appendChild(imageWrap);
+    link.appendChild(body);
+
+    const actions = document.createElement("div");
+    actions.className = "art-card-actions";
+
+    const addButton = document.createElement("button");
+    addButton.type = "button";
+    addButton.className = "secondary-button";
+    addButton.textContent = "Add to cart";
+    addButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      addToCart(artwork.id, 1);
+      addButton.textContent = "Added";
+      window.setTimeout(() => {
+        addButton.textContent = "Add to cart";
+      }, 1200);
+    });
+
+    actions.appendChild(addButton);
+    card.appendChild(link);
+    card.appendChild(actions);
     grid.appendChild(card);
   });
 }

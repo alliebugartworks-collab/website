@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artwork — Allie Bug Studio</title>
-  <meta name="description" content="View artwork details and photos.">
+  <title>Cart — Allie Bug Artwork</title>
+  <meta name="description" content="Review and update your cart.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,12 +28,17 @@
   </header>
 
   <main>
-    <div class="container piece-page">
-      <a href="index.html" class="back-link">← Back to gallery</a>
-      <div id="piece-content">
-        <p class="loading">Loading artwork…</p>
+    <section class="cart-page">
+      <div class="container">
+        <div class="cart-header">
+          <p class="eyebrow">Your order</p>
+          <h1>Cart</h1>
+        </div>
+        <div id="cart-content">
+          <p class="loading">Loading cart…</p>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -41,6 +46,6 @@
   </footer>
 
   <script src="js/site.js"></script>
-  <script src="js/piece.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 </html>
