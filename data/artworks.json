@@ -3,9 +3,9 @@
     {
       "id": "love-bad-bitches",
       "title": "I Love Bad Bitches Banner",
-      "description": "Bold handmade fabric banner featuring appliquéd lettering in purple and lilac on cream, framed by a hand-stitched yellow border with embroidered stars and hearts. A playful statement piece for any wall.",
-      "price": 75,
-      "priceDisplay": "$75",
+      "description": "This design was inspired by my sister's love as A$AP Rocky when she was a 17 year old girl. It is a felt and cotton fabric banner entirely handstitched with small beaded details, a solid border, and hanging loops on the back.",
+      "price": 100,
+      "priceDisplay": "$100",
       "images": ["images/love-bad-bitches/main.jpg"],
       "thumbnail": "images/love-bad-bitches/main.jpg",
       "category": "felt-piece"
@@ -13,7 +13,7 @@
     {
       "id": "very-hungry-boy-card",
       "title": "Very Hungry Boy Card",
-      "description": "Very Hungry Boy Card. Includes handmade envelope. Can customize face!",
+      "description": "The perfect birthday card for the very hungry kid in your life. This digitally illustrated card will be customized with the face of your little loved one. Comes with a matching envelope liner!",
       "price": 5,
       "priceDisplay": "$5",
       "images": ["images/very-hungry-boy-card/main.png"],
@@ -22,30 +22,30 @@
     },
     {
       "id": "wedding-gifts",
-      "title": "Jon + Merrisa Wedding Banner",
-      "description": "Custom felt appliqué banner celebrating Jon and Merrisa with the phrase \"just like BUTTER\" and wedding date 6 · 20 · 2026. Hand-stitched scalloped navy borders on a soft blue background.",
-      "price": 85,
-      "priceDisplay": "$85",
+      "title": "Just Like Butter Wedding Banner",
+      "description": "This felt and cotton fabric banner was a wedding gift for friends who described their relationship like butter melting into mashed potatoes-a beautiful amalgamation of souls. I can include names and/or date for an additional $20.",
+      "price": 65,
+      "priceDisplay": "$65",
       "images": ["images/wedding-gifts/main.png"],
       "thumbnail": "images/wedding-gifts/main.png",
       "category": "felt-piece"
     },
     {
       "id": "bachelorette-gift",
-      "title": "Camp Ari + Amy Banner",
-      "description": "Quilted wall hanging with bubble-letter appliqué reading \"CAMP ARI + AMY\" on a diamond-quilted green background. Finished with a light blue border, hand-embroidered stars, hearts, and a disco ball.",
-      "price": 80,
-      "priceDisplay": "$80",
+      "title": "Camp Banner",
+      "description": "My friends had a camp themed bachelorette party and I crafted this banner to help celebrate! I thrifted that beautiful green material for the base and handstitched every felt piece and bead on top. The disco ball, stars, and beadwork are optional for an additional $20. ",
+      "price": 75,
+      "priceDisplay": "$75",
       "images": ["images/bachelorette-gift/main.png"],
       "thumbnail": "images/bachelorette-gift/main.png",
       "category": "felt-piece"
     },
     {
       "id": "casey-name",
-      "title": "Casey Name Banner",
-      "description": "Personalized felt name banner with navy block letters on a light blue strip, decorative purple cross-stitch borders, and a ribbon fringe in lavender and blue. Perfect for a nursery or child's room.",
-      "price": 40,
-      "priceDisplay": "$40",
+      "title": "Name Banner",
+      "description": "Handstitched felt name sign for your kiddo's room. You can pick colors from my felt library to completely customize the banner, or I'd love to surprise you with the final design. Ribbon adornment available for $5 and star additions are available for $10. ",
+      "price": 30,
+      "priceDisplay": "$30",
       "images": ["images/casey-name/main.png"],
       "thumbnail": "images/casey-name/main.png",
       "category": "felt-piece"
@@ -53,9 +53,9 @@
     {
       "id": "jamie-name",
       "title": "Jamie Name Banner",
-      "description": "Hand-stitched felt name banner with mustard-yellow letters on a navy background, pink accents, decorative cross-stitching, and a playful blue and pink ribbon fringe.",
-      "price": 40,
-      "priceDisplay": "$40",
+      "description": "combine with casey-name. one listing for all name banners",
+      "price": 0,
+      "priceDisplay": "$0",
       "images": ["images/jamie-name/main.png"],
       "thumbnail": "images/jamie-name/main.png",
       "category": "felt-piece"
@@ -64,8 +64,8 @@
       "id": "sophie-name",
       "title": "Sophie Name Banner",
       "description": "Whimsical felt name banner with peach letters on navy, yellow zigzag-stitched borders, and dangling hearts and stars on lavender ribbon. A sweet personalized touch for any child's space.",
-      "price": 45,
-      "priceDisplay": "$45",
+      "price": 40,
+      "priceDisplay": "$40",
       "images": ["images/sophie-name/main.png"],
       "thumbnail": "images/sophie-name/main.png",
       "category": "felt-piece"
