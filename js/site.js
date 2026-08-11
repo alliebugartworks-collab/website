@@ -30,22 +30,32 @@ function normalizeAddons(addons) {
   if (!addons || typeof addons !== "object") return {};
 
   return {
+    name: Boolean(addons.name),
     ribbon: Boolean(addons.ribbon),
     stars: Boolean(addons.stars),
+    hearts: Boolean(addons.hearts),
+    other: Boolean(addons.other),
   };
 }
 
 function getArtworkAddonPrice(artworkId, addons = {}) {
-  const supportedIds = new Set(["casey-name", "name-banner"]);
+  const supportedIds = new Set(["casey-name", "name-banner", "custom-commission"]);
   if (!supportedIds.has(String(artworkId))) return 0;
 
   const normalizedAddons = normalizeAddons(addons);
   const addonPrices = {
+    name: 0,
     ribbon: 5,
     stars: 10,
+    hearts: 0,
+    other: 0,
   };
 
-  return (normalizedAddons.ribbon ? addonPrices.ribbon : 0) + (normalizedAddons.stars ? addonPrices.stars : 0);
+  return (normalizedAddons.name ? addonPrices.name : 0)
+    + (normalizedAddons.ribbon ? addonPrices.ribbon : 0)
+    + (normalizedAddons.stars ? addonPrices.stars : 0)
+    + (normalizedAddons.hearts ? addonPrices.hearts : 0)
+    + (normalizedAddons.other ? addonPrices.other : 0);
 }
 
 function addToCart(artworkId, quantity = 1, customization = "", selectedAddons = {}) {

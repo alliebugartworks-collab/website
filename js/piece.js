@@ -26,8 +26,11 @@ function formatMoney(amount) {
 
 function getAddonSummary(addons) {
   const selected = [];
+  if (addons?.name) selected.push("Name");
   if (addons?.ribbon) selected.push("Ribbon");
   if (addons?.stars) selected.push("Stars");
+  if (addons?.hearts) selected.push("Hearts");
+  if (addons?.other) selected.push("Other");
   return selected.join(", ");
 }
 
@@ -60,8 +63,9 @@ function renderPiece(artwork, siteConfig) {
   const container = document.getElementById("piece-content");
   const images = artwork.images?.length ? artwork.images : [artwork.thumbnail];
   const basePrice = Number(artwork.price) || 0;
-  const supportedIds = new Set(["casey-name", "name-banner"]);
-  const isNameBanner = supportedIds.has(String(artwork.id));
+  const supportedIds = new Set(["casey-name", "name-banner", "custom-commission"]);
+  const isCustomOptionsProduct = supportedIds.has(String(artwork.id));
+  const isCustomCommission = String(artwork.id) === "custom-commission";
 
   document.title = `${artwork.title} — ${siteConfig?.siteTitle || "Allie Bug Studio"}`;
 
@@ -79,27 +83,50 @@ function renderPiece(artwork, siteConfig) {
         <div class="order-box">
           <h2>Place an order</h2>
           <p>Customize your piece and add it to your cart to start the order process.</p>
-          ${isNameBanner ? `
+          ${isCustomOptionsProduct ? `
             <div class="addon-selector">
+              ${isCustomCommission ? `
+                <label class="checkbox-row">
+                  <input type="checkbox" data-addon="name" aria-label="Include a name in the commission">
+                  <span>Name</span>
+                </label>
+              ` : ""}
               <label class="checkbox-row">
                 <input type="checkbox" data-addon="ribbon" aria-label="Add ribbon for $5">
-                <span>Ribbon (+$5)</span>
+                <span>Ribbon ${isCustomCommission ? "" : "(+$5)"}</span>
               </label>
               <label class="checkbox-row">
                 <input type="checkbox" data-addon="stars" aria-label="Add stars for $10">
-                <span>Stars (+$10)</span>
+                <span>Stars ${isCustomCommission ? "" : "(+$10)"}</span>
+              </label>
+              <label class="checkbox-row">
+                <input type="checkbox" data-addon="hearts" aria-label="Include hearts in the commission">
+                <span>Hearts</span>
+              </label>
+              <label class="checkbox-row">
+                <input type="checkbox" data-addon="other" aria-label="Include other details in the commission">
+                <span>Other</span>
               </label>
             </div>
           ` : ""}
           <label class="customization-field" for="customization-input">
-            <span>Customization details</span>
-            <input
-              id="customization-input"
-              type="text"
-              maxlength="120"
-              value=""
-              placeholder="Add a name, date, or note"
-            >
+            <span>${isCustomCommission ? "What are you looking for?" : "Customization details"}</span>
+            ${isCustomCommission ? `
+              <textarea
+                id="customization-input"
+                rows="4"
+                maxlength="250"
+                placeholder="Describe the piece you want, colors you love, names, dates, size, or any details you want included. We will work together to create a custom piece just for you!"
+              ></textarea>
+            ` : `
+              <input
+                id="customization-input"
+                type="text"
+                maxlength="120"
+                value=""
+                placeholder="Add a name, date, or note"
+              >
+            `}
           </label>
           <button type="button" class="primary-button" id="add-to-cart" data-artwork-id="${artwork.id}">Add to cart</button>
         </div>
@@ -116,8 +143,11 @@ function renderPiece(artwork, siteConfig) {
     if (!priceLabel) return;
 
     const selectedAddons = {
-      ribbon: document.querySelector('[data-addon="ribbon"]')?.checked,
-      stars: document.querySelector('[data-addon="stars"]')?.checked,
+      name: document.querySelector('[data-addon="name"]')?.checked || false,
+      ribbon: document.querySelector('[data-addon="ribbon"]')?.checked || false,
+      stars: document.querySelector('[data-addon="stars"]')?.checked || false,
+      hearts: document.querySelector('[data-addon="hearts"]')?.checked || false,
+      other: document.querySelector('[data-addon="other"]')?.checked || false,
     };
     const addonTotal = (selectedAddons.ribbon ? 5 : 0) + (selectedAddons.stars ? 10 : 0);
     const total = basePrice + addonTotal;
@@ -131,8 +161,11 @@ function renderPiece(artwork, siteConfig) {
     addToCartButton.addEventListener("click", () => {
       const customization = customizationInput ? customizationInput.value : "";
       const selectedAddons = {
+        name: document.querySelector('[data-addon="name"]')?.checked || false,
         ribbon: document.querySelector('[data-addon="ribbon"]')?.checked || false,
         stars: document.querySelector('[data-addon="stars"]')?.checked || false,
+        hearts: document.querySelector('[data-addon="hearts"]')?.checked || false,
+        other: document.querySelector('[data-addon="other"]')?.checked || false,
       };
       addToCart(artwork.id, 1, customization, selectedAddons);
       addToCartButton.textContent = "Added to cart";

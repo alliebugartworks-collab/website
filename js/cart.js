@@ -31,17 +31,24 @@ function parseArtworkPrice(artwork) {
 }
 
 function getArtworkAddonPrice(artworkId, addons = {}) {
-  const supportedIds = new Set(["casey-name", "name-banner"]);
+  const supportedIds = new Set(["casey-name", "name-banner", "custom-commission"]);
   if (!supportedIds.has(String(artworkId))) return 0;
 
   const normalizedAddons = addons || {};
-  return (normalizedAddons.ribbon ? 5 : 0) + (normalizedAddons.stars ? 10 : 0);
+  return (normalizedAddons.name ? 0 : 0)
+    + (normalizedAddons.ribbon ? 5 : 0)
+    + (normalizedAddons.stars ? 10 : 0)
+    + (normalizedAddons.hearts ? 0 : 0)
+    + (normalizedAddons.other ? 0 : 0);
 }
 
 function getArtworkAddonSummary(addons = {}) {
   const selected = [];
+  if (addons?.name) selected.push("Name");
   if (addons?.ribbon) selected.push("Ribbon");
   if (addons?.stars) selected.push("Stars");
+  if (addons?.hearts) selected.push("Hearts");
+  if (addons?.other) selected.push("Other");
   return selected.join(", ");
 }
 
@@ -238,7 +245,9 @@ function renderCart() {
 
           <aside class="cart-summary">
             <h2>Order summary</h2>
-            <p class="checkout-intro">Start the checkout process by hitting the button below to text Allie about your order. No payment is required yet. Allie will confirm the order then request the amount via Venmo or Zelle.</p>
+            <p class="checkout-intro">Start the checkout process by hitting the button below to text Allie about your order. </br> </br>No payment is required yet.</br></br>   Allie will coordinate with you to get any photos, details, and customizations for your order. Once confirmed, the total will be requested via Venmo or Zelle.
+           </p>
+            </p>
             <div class="summary-row">
               <span>Items</span>
               <span>${itemCount}</span>
@@ -247,7 +256,7 @@ function renderCart() {
               <span>Total</span>
               <span>${formatCurrency(total)}</span>
             </div>
-            <button type="button" class="primary-button cart-checkout">Let's get your order started! Click to add your name and send text to Allie!</button>
+            <button type="button" class="primary-button cart-checkout">Checkout!</button>
           </aside>
         </div>
       `;
